@@ -1,7 +1,26 @@
 <ion-view view-title="Cab">
+
   <ion-content class="main-window">
-    <h1>Cab</h1>
-    <div>{{msg}}</div>
+    <div>
+
+      <ul class="list">
+        <li class="item">
+          <input  type="text" placeholder="Please tell us where you want cab drop" />
+        </li>
+        <li class="item">
+          <textarea placeholder="Additional comments..."></textarea>
+        </li>
+
+        <br/>
+        <button class="button button-block button-positive" ng-click="submitForm()">
+          Request Cab
+        </button>
+
+      </ul>
+
+
+    </div>
+
   </ion-content>
 </ion-view>
 

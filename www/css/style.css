@@ -1,3 +1,17 @@
 .main-window {
     padding: 10px;
 }
+
+.bar-header {
+    border-color: #0c60ee !important;
+    background-color: #387ef5 !important;
+    color: #fff !important;;
+}
+
+.bar-header .header-item,.bar-header .header-item button {
+    color: #FFF !important;
+}
+
+input,select,textarea {
+    width: 100%;
+}
