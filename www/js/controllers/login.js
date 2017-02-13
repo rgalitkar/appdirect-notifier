@@ -15,7 +15,7 @@ var app = angular.module('app-notifier')
     UserService.login().then(function(response){
       UserService.setUser(response.data);
       console.log(UserService.getUser());
-      $state.go("app.main");
+      $state.go("app.profile");
     })
   };
 });

@@ -25,7 +25,7 @@ angular.module('app-notifier')
 		};
 
 		service.getUser = function(user) {
-			var user = window.localStorage['user'];
+			var user = JSON.parse(window.localStorage['user']);
 			return user;
 		};
 

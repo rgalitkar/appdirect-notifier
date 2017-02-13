@@ -5,13 +5,13 @@
         <div class="input-label">
           First Name
         </div>
-        <input type="text" ng-readonly="true" placeholder="First Name">
+        <input type="text" ng-readonly="true" placeholder="First Name" ng-model="user.firstName">
       </label>
       <label class="item item-input">
         <div class="input-label">
           Last Name
         </div>
-        <input type="text" ng-readonly="true" placeholder="Last Name">
+        <input type="text" ng-readonly="true" placeholder="Last Name" ng-model="user.lastName">
       </label>
       <label class="item item-input item-select">
         <div class="input-label">
@@ -22,12 +22,13 @@
           <option selected>Female</option>
         </select>
       </label>
+      {{user.teams}}
       <label class="item item-input item-select">
         <div class="input-label">
           Team
         </div>
-        <select ng-model="selectedValues" multiple>
-          <option ng-repeat="team in teamNames" value="{{team.id}}">{{team.name}}</option>
+        <select ng-options="team as team.name for team in teamList" 
+         ng-change="onTeamSelected(currentSelectedTeam)" ng-model="currentSelectedTeam"> 
         </select>
       </label>
       <button class="button button-block button-positive" ng-click="saveProfile()">
