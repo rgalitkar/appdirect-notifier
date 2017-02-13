@@ -12,6 +12,15 @@ var app = angular.module('app-notifier')
       ]
     },
     {
+      name: 'Tomorrow',
+      data: [
+        {
+          status: '[WFH]',
+          description: 'Need to take care some personal stuff'
+        }
+      ]
+    },
+    {
       name: 'Upcoming',
       data: [
         {
