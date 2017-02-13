@@ -15,3 +15,7 @@
 input,select,textarea {
     width: 100%;
 }
+
+.or-text {
+	text-align: center;
+}

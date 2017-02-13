@@ -1,6 +1,6 @@
 var app = angular.module('app-notifier')
 
-.controller('MainCtrl', function($scope, $state, $stateParams, $ionicModal, NotifyService) {
+.controller('MainCtrl', function($scope, $state, $stateParams, $ionicModal, NotifyService, ionicToast) {
 
   $scope.notify = {
     isCabAvailed: false,
@@ -26,7 +26,7 @@ var app = angular.module('app-notifier')
     listOption: null,
   };
 
-  $scope.notify.request.type = $scope.notify.availableOptions[0];
+  $scope.notify.request.type = $scope.notify.availableOptions[1];
    
   $scope.datePickerCallback = function (val) {
       if (!val) { 
@@ -37,26 +37,13 @@ var app = angular.module('app-notifier')
   };
 
   var user = {
-    name: 'Rohit Dhore',
-    gender: 'Male'
+    name: 'uaser name',
+    gender: 'Female'
   };//later replace this with persisted user;
 
-  $ionicModal.fromTemplateUrl('templates/notify-confirmation-modal.html', {
-    scope: $scope,
-    animation: 'slide-in-up'
-  }).then(function(modal) {
-    $scope.modal = modal;
-  });
-
-  $scope.openModal = function() {
-    $scope.modal.show();
-  };
-
-  $scope.closeModal = function() {
-    $scope.modal.hide();
-  };
 
   $scope.onOptionChange = function(option) {
+    $scope.notify.showCabOption = false;
     if(option.id == '7' && user.gender == 'Female'){
       $scope.notify.showCabOption = true;
     }
@@ -65,11 +52,12 @@ var app = angular.module('app-notifier')
   $scope.submitForm = function(cabBooking){
       console.log('notify: ', $scope.notify.request);
       NotifyService.sendNotification($scope.notify.request, true).then(function(response) {
+        var msg = 'This is a toast at the top.';
         if(cabBooking){
+          ionicToast.show(msg, 'top', false, 2000);
           $state.go("app.cab");
         }else{
-           //submit form
-          $scope.openModal();
+          ionicToast.show(msg, 'top', false, 2000);
         }
       });
   };
