@@ -16,10 +16,28 @@ input,select,textarea {
     width: 100%;
 }
 .profile--image {
-  margin: 5% 30%;
-  width: 30%;
-  height: 30%;
+    margin: 5% 30%;
+    width: 30%;
+    height: 30%;
+
+}
 
 .or-text {
 	text-align: center;
 }
+
+.menu-img {
+    font-size: 32px !important;
+    margin-left: 5px;
+}
+
+.menu-username {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 14px;
+}
+
+.menu-icon{
+    margin-right: 10px ;
+}
+
