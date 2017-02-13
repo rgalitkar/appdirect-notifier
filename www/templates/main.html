@@ -2,35 +2,44 @@
 
   <ion-content class="main-window">
     <div>
-
       <ul class="list">
         <li class="item">
-          <select ng-model="notify.listOption">
-            <option ng-repeat="option in notify.availableOptions" value="{{option.id}}">{{option.name}}</option>
+          <p>Select notification type</p>
+          <select ng-options="option as option.name for option in notify.availableOptions" 
+          ng-model="notify.request.type" ng-change="onOptionChange(notify.request.type)">
           </select>
         </li>
         <li class="item">
-          <textarea placeholder="Enter description here..."></textarea>
+          <p>Provide reason</p>
+          <textarea placeholder="Enter reason here" ng-model="notify.request.description"></textarea>
         </li>
         <li class="item">
-          <input  type="text" placeholder="Date" />
+          <p>Select Date</p>
+          <ionic-datepicker date="notify.request.date" min="notify.minDate">
+              <button class="button button-block button-positive"> 
+              {{ notify.request.date | date:'MMM/dd/yyyy' }} </button>
+          </ionic-datepicker>
         </li>
         <li class="item">
-          <input  type="text" placeholder="Time" />
+          <p>Enter time</p>
+          <input type="text" placeholder="Time" ng-model="notify.request.time"/>
         </li>
-        <li class="item" ng-show="notify.showCabOption">
-          <ion-checkbox ng-model="notify.isCabAvailed">Need Cab ?</ion-checkbox>
-        </li>
-        <br/>
-        <button class="button button-block button-positive" ng-click="submitForm()">
-          Submit
-        </button>
-
+        <div ng-if="notify.showCabOption">
+          <button class="button button-block button-danger" ng-click="submitForm()">
+            Skip cab & notify
+          </button>
+          <h6 class="or-text">OR</h6>
+          <button class="button button-block button-positive" ng-click="submitForm(true)">
+            notify & Book cab
+          </button>
+        </div>
+        <div ng-if="!notify.showCabOption">
+          <button class="button button-block button-positive" ng-click="submitForm()">
+            Submit
+          </button>
+        </div>
       </ul>
-
-
     </div>
-
   </ion-content>
 </ion-view>
 
