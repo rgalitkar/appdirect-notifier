@@ -8,7 +8,7 @@
         <input type="text" placeholder="Search">
       </label>
     </div>
-    <div ng-repeat="alertBlock in individualAlerts">
+    <div ng-repeat="alertBlock in individualAlerts" ng-show="individualAlerts.length">
       <div class="item item-divider">
         {{alertBlock.name}}
       </div>
@@ -20,6 +20,9 @@
         </a>
       </div>
       <br>
+    </div>
+    <div class="item" ng-show="!individualAlerts.length">
+      No notifications for the user
     </div>
   </ion-content>
 </ion-view>
