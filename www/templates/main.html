@@ -15,15 +15,11 @@
         </li>
         <li class="item">
           <p>Select Date</p>
-          <ionic-datepicker date="notify.request.date" min="notify.minDate">
-              <button class="button button-block button-positive"> 
-              {{ notify.request.date | date:'MMM/dd/yyyy' }} </button>
-          </ionic-datepicker>
           <input type="date" name="" ng-model="notify.request.date">
         </li>
         <li class="item">
           <p>Enter time</p>
-          <input type="text" placeholder="Time" ng-model="notify.request.time"/>
+          <input type="time" ng-model="demoTime" ng-model="notify.request.time"/>
         </li>
         <div ng-if="notify.showCabOption">
           <button class="button button-block button-danger" ng-click="submitForm()">
