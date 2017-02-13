@@ -53,3 +53,13 @@ select {
 .ionic_toast_top {
   top: 40px !important;
 }
+
+
+.login-plain-screen {
+    background: #387ef5;
+}
+
+.login-img {
+    width:300px;
+    margin: 80px 0px;
+}

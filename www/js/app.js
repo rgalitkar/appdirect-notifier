@@ -6,10 +6,19 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('app-notifier', ['ionic', 'ionic-datepicker', 'ionic-toast'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $state, $timeout) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
+
+    $timeout(function(){
+      if($state.current.name == "" || ($state.current && $state.current.name == 'app.login')){
+        $('.ion-navicon').hide();
+      }else{
+        $('.ion-navicon').show();
+      }
+    },1000);
+
     if (window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
