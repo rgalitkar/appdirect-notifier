@@ -1,6 +1,5 @@
-controllerModule.controller('CabCtrl', function($scope, $state, $stateParams, $ionicModal) {
-
-
+var app = angular.module('app-notifier')
+.controller('CabCtrl', function($scope, $state, $stateParams, $ionicModal) {
   $ionicModal.fromTemplateUrl('templates/notify-confirmation-modal.html', {
     scope: $scope,
     animation: 'slide-in-up'
