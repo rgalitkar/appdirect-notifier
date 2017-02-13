@@ -1,5 +1,5 @@
 var app = angular.module('app-notifier')
-app.controller('ProfileCtrl', function($scope, $stateParams, UserService, TeamService) {
+app.controller('ProfileCtrl', function($scope, $stateParams, $state, UserService, TeamService) {
 	$scope.user = UserService.getUser();
 	console.log('User: ', $scope.user);
 	TeamService.getList().then(function(response){
@@ -12,4 +12,11 @@ app.controller('ProfileCtrl', function($scope, $stateParams, UserService, TeamSe
 			$scope.user.teams.push(team.name);
 		}
 	};
+  $scope.saveProfile = function(){
+    UserService.saveUser($scope.user).then(function(response){
+      window.localStorage['user'] = null;
+      window.localStorage['user'] = angular.toJson($scope.user);
+      $state.go('app.main');
+    });
+  };
 });

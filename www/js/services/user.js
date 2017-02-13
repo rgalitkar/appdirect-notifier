@@ -38,5 +38,14 @@ angular.module('app-notifier')
 			dataType: 'json'
 			});
 		};
+    service.saveUser = function(user) {
+      return $http({
+        url: './json/user.json',
+        method: 'GET',
+        cache: false,
+        contentType: 'application/json',
+        dataType: 'json'
+      });
+    };
 		return service;
 });
