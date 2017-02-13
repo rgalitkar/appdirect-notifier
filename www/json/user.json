@@ -1,7 +1,7 @@
 {
-	"name": "",
-	"lastName": "",
-	"email": "",
-	"gender": "",
-	"teams": []
+	"name": "Rohit",
+	"lastName": "Dhore",
+	"email": "rohit.dhore@appdirect.com",
+	"gender": "Male",
+	"teams": ['psofe', 'midtier']
 }
