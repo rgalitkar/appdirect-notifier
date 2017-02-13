@@ -1,5 +1,5 @@
 var app = angular.module('app-notifier')
-.controller('LoginCtrl', function($scope, $state, UserService) {
+.controller('LoginCtrl', function($scope, $state, $location, UserService) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -15,7 +15,8 @@ var app = angular.module('app-notifier')
     UserService.login().then(function(response){
       UserService.setUser(response.data);
       console.log(UserService.getUser());
-      $state.go("app.profile");
+      $state.go('app.profile', {}, {reload: true});
+      //$location.path = "/app/profile";
     })
   };
 });

@@ -6,18 +6,36 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('app-notifier', ['ionic', 'ionic-datepicker', 'ionic-toast'])
 
-.run(function($ionicPlatform, $state, $timeout) {
+.run(function($ionicPlatform, $state, $rootScope, $ionicHistory, $timeout) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
 
+    $rootScope.$on('$stateChangeStart', function(e, toState, toParams, fromState, fromParams) {
+
+      if($state.current.name == "" || ($state.current && $state.current.name == 'app.login')){
+        $('.ion-navicon').hide();
+        $ionicHistory.nextViewOptions({
+          disableBack: true
+        });
+
+      }else{
+        $('.ion-navicon').show();
+        //$ionicHistory.nextViewOptions({
+        //  disableBack: false
+        //});
+      }
+    });
+
+
     $timeout(function(){
       if($state.current.name == "" || ($state.current && $state.current.name == 'app.login')){
         $('.ion-navicon').hide();
+
       }else{
         $('.ion-navicon').show();
       }
-    },1000);
+    });
 
     if (window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
@@ -51,7 +69,7 @@ angular.module('app-notifier', ['ionic', 'ionic-datepicker', 'ionic-toast'])
     })
     .state('app.cab', {
       url: '/cab',
-      cache: false,
+
       views: {
         'menuContent': {
           templateUrl: 'templates/cab.html',
