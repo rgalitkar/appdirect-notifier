@@ -28,9 +28,17 @@ angular.module('app-notifier', ['ionic', 'ionic-datepicker', 'ionic-toast'])
     url: '/app',
     abstract: true,
     templateUrl: 'templates/menu.html',
-    controller: 'AppCtrl'
+    controller: 'LoginCtrl'
   })
-
+    .state('app.login', {
+      url: '/login',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/login.html',
+          controller: 'LoginCtrl'
+        }
+      }
+    })
     .state('app.cab', {
       url: '/cab',
       views: {
@@ -69,5 +77,5 @@ angular.module('app-notifier', ['ionic', 'ionic-datepicker', 'ionic-toast'])
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/main');
+  $urlRouterProvider.otherwise('/app/login');
 });

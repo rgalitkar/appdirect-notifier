@@ -59,6 +59,11 @@ var app = angular.module('app-notifier')
         }else{
           ionicToast.show(msg, 'top', false, 2000);
         }
+
+        $scope.notify.request.type = $scope.notify.availableOptions[1];
+        $scope.notify.request.description = '';
+        $scope.notify.request.date = new Date();
+        $scope.notify.request.time = '';
       });
   };
 
