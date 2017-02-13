@@ -1,0 +1,38 @@
+<ion-view view-title="Profile">
+  <ion-content>
+    <div class="list">
+      <label class="item item-input">
+        <div class="input-label">
+          First Name
+        </div>
+        <input type="text" ng-readonly="true" placeholder="First Name">
+      </label>
+      <label class="item item-input">
+        <div class="input-label">
+          Last Name
+        </div>
+        <input type="text" ng-readonly="true" placeholder="Last Name">
+      </label>
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Gender
+        </div>
+        <select required>
+          <option>Male</option>
+          <option selected>Female</option>
+        </select>
+      </label>
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Team
+        </div>
+        <select ng-model="selectedValues" multiple>
+          <option ng-repeat="team in teamNames" value="{{team.id}}">{{team.name}}</option>
+        </select>
+      </label>
+      <button class="button button-block button-positive" ng-click="saveProfile()">
+        Submit
+      </button>
+    </div>
+  </ion-content>
+</ion-view>

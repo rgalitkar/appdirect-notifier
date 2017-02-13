@@ -4,25 +4,10 @@
       Today
     </div>
     <div class="list">
-      <a class="item item-icon-left" href="#">
+      <a class="item item-icon-left" href="#" ng-repeat="alert in teamAlertsDataToday">
         <i class="icon ion-person"></i>
-        <span>Rakesh [LATE] By : 2:00 P.M.</span>
-        <p>Doctor's appointment ...</p>
-      </a>
-      <a class="item item-icon-left" href="#">
-        <i class="icon ion-person"></i>
-        <span>Prashant [OOO] 12:00 To 2:00 P.M.</span>
-        <p>Stepping out for lunch</p>
-      </a>
-      <a class="item item-icon-left" href="#">
-        <i class="icon ion-person"></i>
-        <span>Rohit [WFH]</span>
-        <p>Need to take care some personal stuff</p>
-      </a>
-      <a class="item item-icon-left" href="#">
-        <i class="icon ion-person"></i>
-        <span>Nitin [Leaving-Early] By : 4:00 P.M </span>
-        <p>Room hunt...</p>
+        <span>{{alert.name}} {{alert.status}} </span>
+        <p>{{alert.description}}</p>
       </a>
     </div>
 
@@ -30,25 +15,10 @@
       Tomorrow
     </div>
     <div class="list">
-      <a class="item item-icon-left" href="#">
+      <a class="item item-icon-left" href="#" ng-repeat="alert in teamAlertsDataTomorrow">
         <i class="icon ion-person"></i>
-        <span>Rakesh [LATE] By : 2:00 P.M.</span>
-        <p>Doctor's appointment ...</p>
-      </a>
-      <a class="item item-icon-left" href="#">
-        <i class="icon ion-person"></i>
-        <span>Prashant [OOO] 12:00 To 2:00 P.M.</span>
-        <p>Stepping out for lunch</p>
-      </a>
-      <a class="item item-icon-left" href="#">
-        <i class="icon ion-person"></i>
-        <span>Rohit [WFH]</span>
-        <p>Need to take care some personal stuff</p>
-      </a>
-      <a class="item item-icon-left" href="#">
-        <i class="icon ion-person"></i>
-        <span>Nitin [Leaving-Early] By : 4:00 P.M </span>
-        <p>Room hunt...</p>
+        <span>{{alert.name}} {{alert.status}} </span>
+        <p>{{alert.description}}</p>
       </a>
     </div>
 
@@ -57,25 +27,10 @@
       Upcoming
     </div>
     <div class="list">
-      <a class="item item-icon-left" href="#">
+      <a class="item item-icon-left" href="#" ng-repeat="alert in teamAlertsDataUpcoming">
         <i class="icon ion-person"></i>
-        <span>Rakesh [LATE] By : 2:00 P.M.</span>
-        <p>Doctor's appointment ...</p>
-      </a>
-      <a class="item item-icon-left" href="#">
-        <i class="icon ion-person"></i>
-        <span>Prashant [OOO] 12:00 To 2:00 P.M.</span>
-        <p>Stepping out for lunch</p>
-      </a>
-      <a class="item item-icon-left" href="#">
-        <i class="icon ion-person"></i>
-        <span>Rohit [WFH]</span>
-        <p>Need to take care some personal stuff</p>
-      </a>
-      <a class="item item-icon-left" href="#">
-        <i class="icon ion-person"></i>
-        <span>Nitin [Leaving-Early] By : 4:00 P.M </span>
-        <p>Room hunt...</p>
+        <span>{{alert.name}} {{alert.status}} </span>
+        <p>{{alert.description}}</p>
       </a>
     </div>
 
