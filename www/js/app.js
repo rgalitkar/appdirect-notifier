@@ -32,6 +32,7 @@ angular.module('app-notifier', ['ionic', 'ionic-datepicker', 'ionic-toast'])
   })
     .state('app.login', {
       url: '/login',
+      cache: false,
       views: {
         'menuContent': {
           templateUrl: 'templates/login.html',
@@ -41,6 +42,7 @@ angular.module('app-notifier', ['ionic', 'ionic-datepicker', 'ionic-toast'])
     })
     .state('app.cab', {
       url: '/cab',
+      cache: false,
       views: {
         'menuContent': {
           templateUrl: 'templates/cab.html',
@@ -50,6 +52,7 @@ angular.module('app-notifier', ['ionic', 'ionic-datepicker', 'ionic-toast'])
     })
     .state('app.status', {
       url: '/status',
+      cache: false,
       views: {
         'menuContent': {
           templateUrl: 'templates/status.html',
@@ -59,6 +62,7 @@ angular.module('app-notifier', ['ionic', 'ionic-datepicker', 'ionic-toast'])
     })
     .state('app.talerts', {
       url: '/talerts',
+      cache: false,
       views: {
         'menuContent': {
           templateUrl: 'templates/talerts.html',
@@ -68,6 +72,7 @@ angular.module('app-notifier', ['ionic', 'ionic-datepicker', 'ionic-toast'])
     })
     .state('app.profile', {
       url: '/profile',
+      cache: false,
       views: {
         'menuContent': {
           templateUrl: 'templates/profile.html',
@@ -77,6 +82,7 @@ angular.module('app-notifier', ['ionic', 'ionic-datepicker', 'ionic-toast'])
     })
   .state('app.main', {
     url: '/main',
+    cache: false,
     views: {
       'menuContent': {
         templateUrl: 'templates/main.html',

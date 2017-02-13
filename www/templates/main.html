@@ -1,4 +1,4 @@
-<ion-view view-title="Notify">
+<ion-view view-title="Notify" hide-back-button="true">
 
   <ion-content class="main-window">
     <div>
@@ -22,11 +22,11 @@
           <input type="time" ng-model="demoTime" ng-model="notify.request.time"/>
         </li>
         <div ng-if="notify.showCabOption">
-          <button class="button button-block button-danger" ng-click="submitForm()">
+          <button class="button button-block button-calm" ng-click="submitForm()">
             Skip cab & notify
           </button>
           <h6 class="or-text">OR</h6>
-          <button class="button button-block button-positive" ng-click="submitForm(true)">
+          <button class="button button-block button-balanced" ng-click="submitForm(true)">
             notify & Book cab
           </button>
         </div>

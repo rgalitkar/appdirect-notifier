@@ -16,7 +16,7 @@ app.controller('ProfileCtrl', function($scope, $stateParams, $state, UserService
     UserService.saveUser($scope.user).then(function(response){
       window.localStorage['user'] = null;
       window.localStorage['user'] = angular.toJson($scope.user);
-      $state.go('app.main');
+      $state.go('app.main', {}, {reload: true});
     });
   };
 });

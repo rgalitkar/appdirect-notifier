@@ -1,4 +1,4 @@
-<ion-view view-title="Profile">
+<ion-view view-title="Profile" hide-back-button="true">
   <ion-content class="main-window">
     <div class="list">
       <img class="profile--image" src="img/profile.png">
@@ -18,7 +18,7 @@
         <div class="input-label">
           Gender
         </div>
-        <select required>
+        <select required ng-model="user.gender">
           <option selected>Male</option>
           <option>Female</option>
         </select>

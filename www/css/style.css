@@ -21,7 +21,6 @@ input,select,textarea {
     height: 30%;
 
 }
-
 .or-text {
 	text-align: center;
 }
@@ -40,4 +39,17 @@ input,select,textarea {
 .menu-icon{
     margin-right: 10px ;
 }
+select {
+  background-color: #fff;
+  border: 1px #dadada;
+}
 
+.toast_section {
+  background-color: #33CD5F !important;
+  opacity: 0.8 !important;
+  filter: alpha(opacity=80)!important;
+}
+
+.ionic_toast_top {
+  top: 40px !important;
+}

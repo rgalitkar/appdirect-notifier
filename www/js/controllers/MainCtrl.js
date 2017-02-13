@@ -1,6 +1,6 @@
 var app = angular.module('app-notifier')
 
-.controller('MainCtrl', function($scope, $state, $stateParams, $ionicModal, NotifyService, ionicToast) {
+.controller('MainCtrl', function($scope, $state, $stateParams, $ionicModal, NotifyService, ionicToast, UserService) {
 
   $scope.notify = {
     isCabAvailed: false,
@@ -36,10 +36,7 @@ var app = angular.module('app-notifier')
       }
   };
 
-  var user = {
-    name: 'uaser name',
-    gender: 'Female'
-  };//later replace this with persisted user;
+  var user = UserService.getUser();
 
 
   $scope.onOptionChange = function(option) {
@@ -52,18 +49,18 @@ var app = angular.module('app-notifier')
   $scope.submitForm = function(cabBooking){
       console.log('notify: ', $scope.notify.request);
       NotifyService.sendNotification($scope.notify.request, true).then(function(response) {
-        var msg = 'This is a toast at the top.';
+        var msg = 'Notification sent succesfully';
         if(cabBooking){
-          ionicToast.show(msg, 'top', false, 2000);
+          ionicToast.show(msg, 'top', false, 20000);
           $state.go("app.cab");
         }else{
-          ionicToast.show(msg, 'top', false, 2000);
+          ionicToast.show(msg, 'top', false, 20000);
         }
 
         $scope.notify.request.type = $scope.notify.availableOptions[1];
         $scope.notify.request.description = '';
         $scope.notify.request.date = new Date();
-        $scope.notify.request.time = '';
+        $scope.notify.request.time = null;
       });
   };
 
